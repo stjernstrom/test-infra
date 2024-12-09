@@ -23,7 +23,3 @@ spec:
     automated: {}
     syncOptions:
       - CreateNamespace=true
-    ignoreDifferences:
-      - group: cilium.io
-        kind: CiliumIdentity
-
