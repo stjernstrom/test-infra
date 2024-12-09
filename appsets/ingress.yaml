@@ -7,7 +7,7 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: test.dokra.io
+    - host: argo.dokra.io
       http:
         paths:
           - backend:
@@ -19,6 +19,6 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - test.dokra.io
+        - argo.dokra.io
       secretName: helloworld-http-tls
   ingressClassName: nginx
