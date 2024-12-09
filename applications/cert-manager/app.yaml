@@ -20,6 +20,12 @@ spec:
           value: "true"
     repoURL: https://charts.jetstack.io
     targetRevision: v1.16.2
+    helm:
+      parameters:
+        - name: crds.enabled
+          value: "true"
+        - name: prometheus.enabled
+          value: "true"
   syncPolicy:
     automated: {}
     syncOptions:
