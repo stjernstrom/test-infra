@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    chart: jetstack/cert-manager
+    chart: cert-manager
     helm:
       parameters:
         - name: installCRDs
