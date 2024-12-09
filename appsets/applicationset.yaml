@@ -26,6 +26,6 @@ spec:
         automated:
           prune: false
           selfHeal: true
-      ignoreDifferences:
-        - group: cilium.io
-          kind: CiliumIdentity
+        ignoreDifferences:
+          - group: cilium.io
+            kind: CiliumIdentity
