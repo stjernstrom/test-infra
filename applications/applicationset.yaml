@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/your-org/mono-repo
+        repoURL: https://github.com/stjernstrom/test-infra
         path: "{{path}}"
         targetRevision: main
       destination:
