@@ -1,24 +1,16 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: api-helloword
-  annotations:
-    cert-manager.io/cluster-issuer: "testissuer"
-  namespace: argocd
+  name: example-tls
+  namespace: default
 spec:
-  rules:
-    - host: argo.dokra.io
-      http:
-        paths:
-          - backend:
-              service:
-                port:
-                  number: 443
-                name: argocd-server
-            path: /
-            pathType: Prefix
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`example.com`)
+      kind: Rule
+      services:
+        - name: my-app
+          port: 80
   tls:
-    - hosts:
-        - argo.dokra.io
-      secretName: helloworld-http-tls
-  ingressClassName: nginx
+    certResolver: letsencrypt
